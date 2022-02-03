@@ -67,23 +67,30 @@ function winnigOne(pc, cs) {
 
 function startGame(playerChoice) {
     const computerChoice = randomChoice();
-    playerResult.innerHTML=`<i class="fas fa-hand-${playerChoice} icon"></i>`
-    computerResult.innerHTML=`<i class="fas fa-hand-${computerChoice} icon"></i>`
+    playerResult.innerHTML=`<i class="fas fa-hand-${playerChoice} icon icon-comp"></i>`
+    computerResult.innerHTML=`<i class="fas fa-hand-${computerChoice} icon icon-play"></i>`
+    const playerIcon = document.querySelector(".icon-comp");
+    const computerIcon = document.querySelector(".icon-play")
 
     const won = winnigOne(playerChoice, computerChoice)
     if (won === "player") {
         result.innerHTML = "Player Won!"
         result.style.color = "green"
         playerScore++;
-
+        playerIcon.style.color = "green";
+        computerIcon.style.color ="red";
 
     } else if (won === "computer") {
         result.innerHTML = "Computer Won!"
         result.style.color = "red"
         computerScore++;
+        playerIcon.style.color = "red";
+        computerIcon.style.color ="green";
     } else {
         result.innerHTML = "Draw!"
         result.style.color = "Black"
+        playerIcon.style.color = "black";
+        computerIcon.style.color ="black";
     }
 
     playerResult.innerHTML += playerScore;
