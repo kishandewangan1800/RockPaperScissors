@@ -8,7 +8,6 @@
 body{
     display: flex;
     justify-content: center;
-    align-items: center;
     text-align: center;
     font-family: 'Fira Sans', sans-serif;
     width: 100vw;
@@ -23,8 +22,8 @@ body{
 
 
 .heading{
-margin-bottom: 25px;
-margin-top: 35px;
+margin-bottom: 50px;
+margin-top: 60px;
 
 }
 .start{
